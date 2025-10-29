@@ -3,6 +3,9 @@ import sys
 correct_pin = 4321
 attempts = 3
 authenticated = False
+print ("=========================")
+print ("      ATM MACHINE       ")
+print ("=========================")
 
 username = input("Enter Username: ")
 
@@ -19,7 +22,6 @@ while attempts > 0:
         continue
 
     if correct_pin == user_input:
-        print("\nWelcome back,", username)
         authenticated = True
         break
     else:
@@ -34,12 +36,18 @@ if not authenticated:
     print("Account locked. Exiting.")
     sys.exit()
 
+print ("=========================")
+print ("      ATM MACHINE       ")
+print ("=========================")
+print("\nWelcome back,", username)
+print ("What are we doing today,")
 
 choice = ""
 balance = 50000
 while True:
-    print ("\nWhat are we doing today")
-    print ("1.Check Balance")
+
+
+    print ("\n1.Check Balance")
     print ("2.Deposit")
     print ("3.Withdraw")
     print ("4.Exit")
