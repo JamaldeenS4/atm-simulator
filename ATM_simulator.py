@@ -50,7 +50,8 @@ while True:
     print ("\n1.Check Balance")
     print ("2.Deposit")
     print ("3.Withdraw")
-    print ("4.Exit")
+    print ("4.Change pin")
+    print ("5.Exit")
 
     choice = input("Your choice: ")
     
@@ -72,9 +73,24 @@ while True:
             balance -= withdraw
             print ("Your balance: $", balance)
 
-    elif choice == "4" or choice == "Exit":
+    elif choice == "4" or choice == "Change pin":
+        current_pin = int(input("Enter Current PIN: "))
+        if current_pin == correct_pin:
+            new_pin = int(input("Enter New PIN: "))
+            confirm_pin = int(input("Confirm New PIN: "))
+            if new_pin == confirm_pin:
+                print("PIN successfully Changed")
+            else:
+                print("PIN confirmation does not match.")
+        else:
+            print("Incorrect PIN")
+
+    elif choice == "5" or choice == "Exit":
         print("See you soon")
         break
 
     else:
-        print ("Invalid choice, Please try again.")
+        print("Invalid Choice, Try again!")
+
+
+
