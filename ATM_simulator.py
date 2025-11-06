@@ -51,7 +51,8 @@ while True:
     print ("2.Deposit")
     print ("3.Withdraw")
     print ("4.Change pin")
-    print ("5.Exit")
+    print ("5.Transfer")
+    print ("6.Exit")
 
     choice = input("Your choice: ")
     
@@ -84,8 +85,22 @@ while True:
                 print("PIN confirmation does not match.")
         else:
             print("Incorrect PIN")
+    
+    elif choice == "5" or choice == "Transfer":
+        target_acct = input("Enter Target Account: ")
+        if len(target_acct) == 10:
+            target_acct = input("Enter Bank Account")
+            amount = int(input("Enter Amount: "))
+            if amount >  balance:
+                print("Insufficient Balance")
+            else:
+                balance -= amount
+                print("Transfer of ${} was Successful".format(amount))
+                print("Balance: ${}".format(balance))
+        else:
+            print("Invalid Account Number")
 
-    elif choice == "5" or choice == "Exit":
+    elif choice == "6" or choice == "Exit":
         print("See you soon")
         break
 
